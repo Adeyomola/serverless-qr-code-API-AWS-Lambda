@@ -2,7 +2,6 @@ import json
 import qrcode
 import io
 import boto3
-import base64
 
 s3 = boto3.client('s3')
 
