@@ -1,6 +1,7 @@
-# ignore directories
+# ignore qrcode module directories and files
 */
-
+png.py
+typing_extensions.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
