@@ -25,7 +25,9 @@ def qr_gen(event, context):
     qr_code_url = f"https://s3-{region}.amazonaws.com/qr-code-gen/{filename}"
 
     return {
-        'status': 200,
-        'body': json.dumps({'message': 'QR Code successfully generated', 'url': qr_code_url})
+        'isBase64Encoded': 'false',
+        'statusCode': 200,
+        'headers': {"Content-Type": "application/json"},
+        'body': json.dumps({'message': 'QR Code successfully generated', 'qr_code_url': qr_code_url})
     }
 
