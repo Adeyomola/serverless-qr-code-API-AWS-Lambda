@@ -7,8 +7,8 @@ import base64
 s3 = boto3.client('s3')
 
 def qr_gen(event, context):
-   # body = json.loads(event) # converts event json to deserialized object in Python
-    url = event['url']
+    body = json.loads(event['body']) # converts event['body'] json to deserialized object in Python
+    url = body['url']
 
     qr_img = qrcode.make(url) # create QR code
     qr_img_byte = io.BytesIO() # initialize a file-like object operating on bytes data in memory
@@ -26,6 +26,6 @@ def qr_gen(event, context):
 
     return {
         'status': 200,
-        'body': json.dumps({'message': 'QR Code successfully generated', 'qr_code_url': qr_code_url})
+        'body': json.dumps({'message': 'QR Code successfully generated', 'url': qr_code_url})
     }
 
