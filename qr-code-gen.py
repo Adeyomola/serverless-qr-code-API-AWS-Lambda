@@ -16,7 +16,7 @@ def qr_gen(event, context):
 
     filename = url.split("://")[1].replace('/', '_') + ".png" # splits url into http(s) and rest of URL; uses rest of URL as filename while replace slashes with underscores
 
-    s3.put_object(Bucket='qr-code-gen', Key=filename, Body=qr_img_byte, ContentType='image/png') # put QR code in S3 bucket
+    s3.put_object(Bucket='qr-code-gen', Key=filename, Body=qr_img_byte, ContentType='image/png', GrantRead='uri=http://acs.amazonaws.com/groups/global/AllUsers' ) # put QR code in S3 bucket
 
     # Generate URL for the QR code we put in an S3 bucket
     location = s3.get_bucket_location(Bucket='qr-code-gen')['LocationConstraint']
