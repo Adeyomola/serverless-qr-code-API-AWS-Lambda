@@ -1,4 +1,4 @@
-# Serverless QRCode Generator API Documentation
+# Documentation
 
 ## Introduction
 The QR Code Generator API allows users to generate QR codes from provided URLs and store them in an Amazon S3 bucket. This documentation provides instructions on how to interact with the API, including authentication, available endpoints, request/response formats, and sample code snippets.
