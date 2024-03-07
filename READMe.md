@@ -25,16 +25,16 @@ Generates a QR code from a provided URL and stores it in an Amazon S3 bucket.
     - `message` (string): Success message.
     - `qr_code_url` (string): URL to access the generated QR code image.
 
-## Sample Request
+## Demo
+
+https://github.com/Adeyomola/serverless-qr-code-API-AWS-Lambda/assets/44479277/7757224a-8ee1-4710-98ab-4339ceba63d0
+
+## Sending a Request with `curl`
 
 ```
 curl -X POST -d '{"url": "https://test.com"}' \
 https://1zr2whunxh.execute-api.eu-west-1.amazonaws.com/default/qr-code-gen
 ```
-
-## Demo
-
-https://github.com/Adeyomola/serverless-qr-code-API-AWS-Lambda/assets/44479277/7757224a-8ee1-4710-98ab-4339ceba63d0
 
 ## Error Handling
 In case of errors, the API will return an appropriate HTTP status code along with an error message in the response body.
